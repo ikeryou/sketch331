@@ -76,6 +76,7 @@ export class Visual extends Canvas {
           tEffect:{value:this._blur[this._blur.length - 1].getTexture()},
           mouse:{value:new Vector3()},
           time:{value:0},
+          test:{value:0.75},
         }
       })
     );
@@ -104,6 +105,7 @@ export class Visual extends Canvas {
     const baseRadius = Math.max(w, h) * 0.15;
 
     const uni = this._getUni(this._dest);
+    uni.test.value = Func.instance.val(0.65, 0.75);
     uni.time.value += 1;
     uni.mouse.value.set(Util.instance.map(mx, 0, 1, -1, 1), Util.instance.map(my, 0, 0.99, -0.5, 0.5));
 

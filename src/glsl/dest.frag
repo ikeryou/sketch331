@@ -3,6 +3,7 @@ uniform sampler2D tNormal;
 uniform sampler2D tEffect;
 uniform vec3 mouse;
 uniform float time;
+uniform float test;
 
 varying vec2 vUv;
 
@@ -12,7 +13,7 @@ void main(void) {
   vec4 destA = texture2D(tNormal, vUv);
   vec4 destB = texture2D(tEffect, vUv);
 
-  if(crossTest > 0.75) {
+  if(crossTest > test) {
     destA = destB;
 
     float dotScale = 1.0;
